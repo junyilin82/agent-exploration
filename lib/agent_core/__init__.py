@@ -15,6 +15,7 @@ from agent_core.agent import (
     ToolCallingAgent,
     AgentConfig,
     AgentLogger,
+    load_prompt,
 )
 from agent_core.tools import (
     create_default_tools,
@@ -32,6 +33,8 @@ __all__ = [
     "ToolCallingAgent",
     "AgentConfig",
     "AgentLogger",
+    # Prompts
+    "load_prompt",
     # Default tools
     "create_default_tools",
     "calculator",

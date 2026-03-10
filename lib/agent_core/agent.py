@@ -7,6 +7,7 @@ Provides both:
 """
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 from google import genai
@@ -16,12 +17,19 @@ from agent_core.registry import ToolRegistry
 
 
 # =============================================================================
-# CONFIGURATION
+# LOAD SYSTEM PROMPT FROM FILE
 # =============================================================================
 
-DEFAULT_SYSTEM_INSTRUCTION = """You are a helpful assistant with access to tools.
-Use tools when they are relevant to answering the question.
-For general knowledge questions, answer directly without using tools."""
+def load_prompt(name: str = "default") -> str:
+    """Load a system prompt from the prompts folder."""
+    prompts_dir = Path(__file__).parent / "prompts"
+    prompt_file = prompts_dir / f"{name}.md"
+    if not prompt_file.exists():
+        raise FileNotFoundError(f"Prompt not found: {prompt_file}")
+    return prompt_file.read_text()
+
+
+DEFAULT_SYSTEM_INSTRUCTION = load_prompt("default")
 
 
 @dataclass
