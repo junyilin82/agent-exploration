@@ -6,7 +6,7 @@ A hands-on learning project exploring AI agents, from simple tool-calling to mul
 
 ```
 agent/
-├── phase_1/   # Tool-calling agent (OpenAI function calling)
+├── phase_1/   # Tool-calling agent (Gemini function calling)
 ├── phase_2/   # (Future) ReAct pattern / reasoning agents
 ├── phase_3/   # (Future) Multi-agent systems
 └── ...
@@ -16,7 +16,7 @@ agent/
 
 | Phase | Topic | Status |
 |-------|-------|--------|
-| 1 | Tool-calling agent with OpenAI | In Progress |
+| 1 | Tool-calling agent with Gemini | In Progress |
 | 2 | TBD | Planned |
 
 ## Setup
@@ -36,5 +36,5 @@ uv sync
 Create a `.env` file in the project root:
 
 ```
-OPENAI_API_KEY=your-key-here
+GOOGLE_API_KEY=your-key-here
 ```

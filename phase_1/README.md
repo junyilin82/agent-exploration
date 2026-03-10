@@ -13,7 +13,7 @@ Learn how LLM-based tool-calling agents work by building one from scratch.
 
 | Script | Purpose |
 |--------|---------|
-| `01_basic_completion.py` | Baseline: simple OpenAI chat completion |
+| `01_basic_completion.py` | Baseline: simple Gemini chat completion |
 | `02_function_schema.py` | Define tools as JSON schemas |
 | `03_tool_calling.py` | Let the model request tool calls |
 | `04_execution_loop.py` | Execute tools and feed results back |
@@ -28,7 +28,7 @@ Learn how LLM-based tool-calling agents work by building one from scratch.
 │                          │                              │
 │                          ▼                              │
 │  ┌─────────────────────────────────────────┐            │
-│  │            LLM (GPT-4o)                 │            │
+│  │            LLM (Gemini)                 │            │
 │  │  "I need to call calculator first"      │            │
 │  └─────────────────────────────────────────┘            │
 │                          │                              │
@@ -43,7 +43,7 @@ Learn how LLM-based tool-calling agents work by building one from scratch.
 │                          │                              │
 │                          ▼                              │
 │  ┌─────────────────────────────────────────┐            │
-│  │            LLM (GPT-4o)                 │            │
+│  │            LLM (Gemini)                 │            │
 │  │  "Now I need weather for NYC"           │            │
 │  └─────────────────────────────────────────┘            │
 │                          │                              │
@@ -58,7 +58,7 @@ Learn how LLM-based tool-calling agents work by building one from scratch.
 │                          │                              │
 │                          ▼                              │
 │  ┌─────────────────────────────────────────┐            │
-│  │            LLM (GPT-4o)                 │            │
+│  │            LLM (Gemini)                 │            │
 │  │  "I have all the info now"              │            │
 │  └─────────────────────────────────────────┘            │
 │                          │                              │
@@ -84,7 +84,7 @@ The "agent" isn't magic. It's a loop:
 
 ```bash
 uv sync
-cp ../.env.example .env  # Add your OpenAI API key
+cp ../.env.example .env  # Add your Google API key
 ```
 
 ## Run

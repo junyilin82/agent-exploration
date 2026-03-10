@@ -1,0 +1,19 @@
+[project]
+name = "phase-1-tool-calling-agent"
+version = "0.1.0"
+description = "Learn tool-calling agents with Gemini"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai>=1.66.0",
+    "python-dotenv>=1.2.2",
+]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint.isort]
+known-first-party = ["phase_1"]
