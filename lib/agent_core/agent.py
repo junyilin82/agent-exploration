@@ -19,12 +19,18 @@ from agent_core.registry import ToolRegistry
 # CONFIGURATION
 # =============================================================================
 
+DEFAULT_SYSTEM_INSTRUCTION = """You are a helpful assistant with access to tools.
+Use tools when they are relevant to answering the question.
+For general knowledge questions, answer directly without using tools."""
+
+
 @dataclass
 class AgentConfig:
     """Configuration for the agent."""
     model_name: str = "gemini-2.5-flash"
     max_loops: int = 10
     verbose: bool = True
+    system_instruction: str = DEFAULT_SYSTEM_INSTRUCTION
 
 
 # =============================================================================
@@ -149,7 +155,10 @@ class ToolCallingAgent:
                 response = self.client.models.generate_content(
                     model=self.config.model_name,
                     contents=contents,
-                    config=GenerateContentConfig(tools=[self.tools.get_tools()]),
+                    config=GenerateContentConfig(
+                        tools=[self.tools.get_tools()],
+                        system_instruction=self.config.system_instruction,
+                    ),
                 )
             except Exception as e:
                 self.logger.log("error", f"API call failed: {e}")
@@ -220,6 +229,7 @@ def run_agent(
     user_query: str,
     model_name: str = "gemini-2.5-flash",
     max_loops: int = 10,
+    system_instruction: str = DEFAULT_SYSTEM_INSTRUCTION,
 ) -> tuple[str, list[dict]]:
     """
     Run the agent loop until we get a final text response.
@@ -232,6 +242,7 @@ def run_agent(
         user_query: The user's question
         model_name: Model to use
         max_loops: Maximum iterations (safety limit)
+        system_instruction: Instructions for the model
 
     Returns:
         Tuple of (response_text, execution_log)
@@ -245,7 +256,10 @@ def run_agent(
         response = client.models.generate_content(
             model=model_name,
             contents=contents,
-            config=GenerateContentConfig(tools=[tools.get_tools()]),
+            config=GenerateContentConfig(
+                tools=[tools.get_tools()],
+                system_instruction=system_instruction,
+            ),
         )
 
         parts = response.candidates[0].content.parts
