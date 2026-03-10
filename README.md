@@ -6,9 +6,10 @@ A hands-on learning project exploring AI agents, from simple tool-calling to mul
 
 ```
 agent/
-├── phase_1/   # Tool-calling agent (Gemini function calling)
-├── phase_2/   # (Future) ReAct pattern / reasoning agents
-├── phase_3/   # (Future) Multi-agent systems
+├── lib/       # Shared library (agent_core)
+├── phase_1/   # Learning scripts (tool-calling agent)
+├── phase_2/   # (Future) Advanced agent patterns
+├── apps/      # Demo applications (Streamlit UI, etc.)
 └── ...
 ```
 
@@ -16,8 +17,14 @@ agent/
 
 | Phase | Topic | Status |
 |-------|-------|--------|
-| 1 | Tool-calling agent with Gemini | In Progress |
+| 1 | Tool-calling agent with Gemini | Complete |
 | 2 | TBD | Planned |
+
+## Apps
+
+| App | Description | Run |
+|-----|-------------|-----|
+| Streamlit Agent | Web UI demo | `cd apps && uv run streamlit run streamlit_phase1.py` |
 
 ## Setup
 
