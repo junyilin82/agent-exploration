@@ -9,6 +9,7 @@ agent/
 ├── lib/       # Shared library (agent_core)
 ├── phase_1/   # Learning scripts (tool-calling agent)
 ├── phase_2/   # React agent patterns
+├── phase_3/   # Planning agent patterns
 ├── apps/      # Demo applications (Streamlit UI, etc.)
 └── ...
 ```
@@ -18,7 +19,8 @@ agent/
 | Phase | Topic | Status |
 |-------|-------|--------|
 | 1 | Tool-calling agent with Gemini | Complete |
-| 2 | React agent with Gemini.       | Planned |
+| 2 | React agent with Gemini        | Complete |
+| 3 | Planning agent with Gemini     | Complete |
 
 ## Apps
 
