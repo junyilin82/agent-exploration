@@ -1,18 +1,15 @@
 [project]
-name = "agent-apps"
+name = "phase-2-react-agent"
 version = "0.1.0"
-description = "Demo applications for the tool-calling agent"
+description = "Learn the ReAct (Reasoning + Acting) pattern"
 requires-python = ">=3.11"
 dependencies = [
-    "streamlit>=1.45.0",
     "python-dotenv>=1.2.2",
     "agent-core",
-    "react-agent",
 ]
 
 [tool.uv.sources]
 agent-core = { path = "../lib", editable = true }
-react-agent = { path = "../lib/react_agent", editable = true }
 
 [tool.ruff]
 line-length = 100

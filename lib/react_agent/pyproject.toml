@@ -1,0 +1,18 @@
+[project]
+name = "react-agent"
+version = "0.1.0"
+description = "ReAct (Reasoning + Acting) agent library"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai>=1.66.0",
+]
+
+[tool.setuptools]
+py-modules = ["__init__", "agent", "tools"]
+packages = ["react_agent"]
+
+[tool.setuptools.package-dir]
+react_agent = "."
+
+[tool.ruff]
+line-length = 100
