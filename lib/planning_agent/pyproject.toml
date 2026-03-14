@@ -1,0 +1,18 @@
+[project]
+name = "planning-agent"
+version = "0.1.0"
+description = "Planning agent library - plan first, then execute"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai>=1.66.0",
+]
+
+[tool.setuptools]
+py-modules = ["__init__", "agent", "tools"]
+packages = ["planning_agent"]
+
+[tool.setuptools.package-dir]
+planning_agent = "."
+
+[tool.ruff]
+line-length = 100

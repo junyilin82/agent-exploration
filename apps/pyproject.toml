@@ -8,11 +8,13 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "agent-core",
     "react-agent",
+    "planning-agent",
 ]
 
 [tool.uv.sources]
 agent-core = { path = "../lib", editable = true }
 react-agent = { path = "../lib/react_agent", editable = true }
+planning-agent = { path = "../lib/planning_agent", editable = true }
 
 [tool.ruff]
 line-length = 100
