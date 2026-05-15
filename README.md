@@ -11,6 +11,7 @@ agent/
 ├── phase_2/   # React agent patterns
 ├── phase_3/   # Planning agent patterns
 ├── phase_4/   # Multi-agent system patterns
+├── phase_5/   # Evaluation & guardrails
 ├── apps/      # Demo applications (Streamlit UI, etc.)
 └── ...
 ```
@@ -23,6 +24,7 @@ agent/
 | 2 | React agent with Gemini        | Complete |
 | 3 | Planning agent with Gemini     | Complete |
 | 4 | Multi-agent systems with Gemini | Complete |
+| 5 | Evaluation & guardrails with Gemini | Complete |
 
 ## Apps
 
