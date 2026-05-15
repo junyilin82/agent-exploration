@@ -10,6 +10,7 @@ agent/
 ├── phase_1/   # Learning scripts (tool-calling agent)
 ├── phase_2/   # React agent patterns
 ├── phase_3/   # Planning agent patterns
+├── phase_4/   # Multi-agent system patterns
 ├── apps/      # Demo applications (Streamlit UI, etc.)
 └── ...
 ```
@@ -21,12 +22,16 @@ agent/
 | 1 | Tool-calling agent with Gemini | Complete |
 | 2 | React agent with Gemini        | Complete |
 | 3 | Planning agent with Gemini     | Complete |
+| 4 | Multi-agent systems with Gemini | Complete |
 
 ## Apps
 
 | App | Description | Run |
 |-----|-------------|-----|
-| Streamlit Agent | Web UI demo | `cd apps && uv run streamlit run streamlit_phase1.py` |
+| Phase 1 Agent | Tool-calling UI | `cd apps && uv run streamlit run streamlit_phase1.py` |
+| Phase 2 Agent | ReAct reasoning UI | `cd apps && uv run streamlit run streamlit_phase2.py` |
+| Phase 3 Agent | Planning agent UI | `cd apps && uv run streamlit run streamlit_phase3.py` |
+| Phase 4 Agent | Multi-agent system UI | `cd apps && uv run streamlit run streamlit_phase4.py` |
 
 ## Setup
 
